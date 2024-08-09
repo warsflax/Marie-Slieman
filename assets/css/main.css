@@ -1,4 +1,4 @@
-s/**
+/**
 * Template Name: PhotoFolio
 * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
 * Updated: Jun 29 2024 with Bootstrap v5.3.3
@@ -813,8 +813,7 @@ section,
   padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
-  background-image: url("../img/gallery/Background.jpg");
-
+  background-image: url("../assets/img/gallery/Background.jpg");
 }
 
 .hero h2 {
