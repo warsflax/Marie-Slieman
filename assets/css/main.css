@@ -19,7 +19,7 @@
 
 .hero-content p {
   font-size: 1.2rem;
-  max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
+  max-width: 1000px; /* Limite la largeur du texte pour une meilleure lisibilité */
   margin-bottom: 30px;
 }
 
