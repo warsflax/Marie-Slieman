@@ -1,16 +1,43 @@
-/**
-* Template Name: PhotoFolio
-* Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.hero-content {
+  padding: 20px;
+  color: black; /* Assurez-vous que le texte est lisible sur l'image de fond */
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
+  margin-bottom: 30px;
+}
+
+
 /* Fonts */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+ 
+}
+
+
 button {
   padding: 10px 20px;
   text-transform: uppercase;
