@@ -1,4 +1,11 @@
 
+
+.heading {
+  position: relative; /* Assure que le contenu reste au-dessus de l'overlay */
+  z-index: 1;
+}
+
+
 .hero-image {
   display: flex;
   align-items: center;
@@ -8,7 +15,7 @@
 
 .hero-content {
   padding: 20px;
-  color: black; /* Assurez-vous que le texte est lisible sur l'image de fond */
+  color: rgb(255, 255, 255); /* Assurez-vous que le texte est lisible sur l'image de fond */
 }
 
 .hero-content h2 {
@@ -75,7 +82,7 @@ button {
   --button-background: #FF69B4; /* Rose moyen pour le fond des boutons */
   --button-text: #FFFFFF; /* Blanc pour le texte des boutons */
   --button-border: #C71585; /* Rose foncé pour la bordure des boutons */
-  --text-color: #C71585; /* Rose foncé pour le texte général */
+  --text-color: #f139ae; /* C71585 Rose foncé pour le texte général */
   --link-color: #FF1493; /* Rose vif pour les liens */
   --link-hover-color: #FF69B4; /* Rose moyen pour les liens au survol */
 }
