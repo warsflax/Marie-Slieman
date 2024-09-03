@@ -68,22 +68,20 @@ b=document.querySelector(".navbar-collapse");if(a&&!a.classList.contains("opacit
 document.addEventListener("DOMContentLoaded", function() {
     var popup = document.getElementById("popup");
     var closeBtn = document.getElementById("closeBtn");
+    var emailInput = document.getElementById("email-form01-1");
 
-    // Vérifie si la pop-up a déjà été affichée
-    if (!localStorage.getItem('popupDisplayed')) {
-        console.log('Pop-up non affichée précédemment, affichage de la pop-up.');
-        popup.style.visibility = "visible"; // Affiche la pop-up
-    } else {
-        popup.style.visibility = "hidden";
+    // Event listener pour le bouton de soumission
+    closeBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Empêche l'envoi du formulaire pour la validation
 
-        console.log('Pop-up déjà affichée, ne pas l\'afficher à nouveau.');
-    }
+        var emailValue = emailInput.value.trim(); // Récupère la valeur du champ email
 
-    // Ferme la pop-up et enregistre qu'elle a été affichée
-    closeBtn.addEventListener("click", function() {
-        popup.style.visibility = "hidden";
-        localStorage.setItem('popupDisplayed', 'true');
-        console.log('Pop-up fermée et statut enregistré dans localStorage.');
+        // Vérifie si le champ email est valide
+        if (emailValue.length >= 6 && emailValue.includes("@")) {
+            popup.style.visibility = "hidden"; // Ferme le pop-up si la condition est remplie
+        } else {
+            alert("Veuillez entrer une adresse email valide d'au moins 6 caractères contenant '@'.");
+        }
     });
 });
 
