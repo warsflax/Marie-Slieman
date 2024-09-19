@@ -27,7 +27,16 @@
       <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
       <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=orKuLi"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=orKuLi" type="text/css">
-    
+      <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+      </script>
+      <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "j0GTsNtY6uy89CJ8h",
+          });
+      })();
+      </script>
       
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -82,15 +91,15 @@
 						<div class="row">
 							<div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Merci d'avoir rempli le formulaire !</div>
 							<div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-								Oops...! some problem!
+m								Oops...! some proble!
 							</div>
 						</div>
 						<div class="dragArea row">
               <br> <br><br>
 						<div data-for="email" class="col-lg-6 col-md-6 col-sm-12 form-group">
-								<input type="email" name="email" placeholder="VotreEmail@email.com" data-form-field="email" class="form-control display-7" value="" id="email-form01-1">
+								<input type="email" name="email" placeholder="VotreEmail@email.com" data-form-field="email" class="form-control display-7" value="" id="email1">
 							</div>
-              <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7" id="closeBtn">
+              <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7"  onclick="sendMail()" id="closeBtn" >
                 Commencer
             </button></div>
              <!--	 
@@ -597,18 +606,18 @@
                         </div>
                         <div class="dragArea row">
                             <div class="col-md col-sm-12 form-group mb-3 mb-3" data-for="name">
-                                <input type="text" name="name" placeholder="Nom" data-form-field="name" class="form-control" value="" id="name-form03-0">
+                                <input type="text" name="name" placeholder="Nom" data-form-field="name" class="form-control" value="" id="full_name">
                             </div>
                             <div class="col-md col-sm-12 form-group mb-3 mb-3" data-for="email">
-                                <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form03-0">
+                                <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email">
                             </div>
                             <div class="col-12 form-group mb-3 mb-3" data-for="phone">
-                                <input type="tel" name="phone" placeholder="Télelphone" data-form-field="phone" class="form-control" value="" id="phone-form03-0">
+                                <input type="tel" name="phone" placeholder="Télelphone" data-form-field="phone" class="form-control" value="" id="phone">
                             </div>
                             <div class="col-12 form-group mb-3 mb-3" data-for="textarea">
-                                <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-form03-0"></textarea>
+                                <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="message"></textarea>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7">
+                            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7" onclick="sendMailMessage()">
                                     Envoyer le message
                                 </button></div>
                         </div>
