@@ -71,7 +71,7 @@ function sendMail(){
         name:document.getElementById("email1").value,
 
     }
-    emailjs.send("service_iffj9pr","template_htly2yl", parms).then(alert("done"));
+    emailjs.send("service_iffj9pr","template_htly2yl", parms).then(alert("Thanks for filling out the form! - Merci d'avoir rempli le formulaire !"));
 
 
 }
@@ -84,7 +84,7 @@ function sendMailMessage(){
 
 
     }
-    emailjs.send("service_iffj9pr","template_gj1twkf", parms).then(alert("done"));
+    emailjs.send("service_iffj9pr","template_gj1twkf", parms).then(alert("Thanks for filling out the form! - Merci d'avoir rempli le formulaire !"));
 
 
 }
