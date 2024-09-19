@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener pour le bouton de soumission
     closeBtn.addEventListener("click", function(event) {
-        event.preventDefault(); // Empêche l'envoi du formulaire pour la validation
+       // event.preventDefault(); // Empêche l'envoi du formulaire pour la validation
 
         var emailValue = emailInput.value.trim(); // Récupère la valeur du champ email
 
