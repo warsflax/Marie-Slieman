@@ -65,6 +65,79 @@ datepicker:!1})}))})}document.querySelectorAll('input[type="range"]').forEach(fu
 else document.querySelectorAll(".pie_progress").length&&("undefined"!==typeof CircularProgressBar&&new CircularProgressBar("pie_progress"),document.querySelectorAll(".pie_progress").forEach(function(a){D(a)}));if(n&&u)f(document).on("add.cards",function(a){f(a.target).hasClass("testimonials-slider")&&y(a.target)}).on("changeParameter.cards",function(a,b,d){"testimonialsSlides"===b&&0==f(a.target).find(".carousel-item.active").length&&B(a.target)});else"undefined"===typeof window.initTestimonialsPlugin&&
 (window.initTestimonialsPlugin=!0,document.querySelectorAll(".testimonials-slider").forEach(function(a){y(a)}));l(function(){n||Array.from(document.body.children).filter(function(a){return!a.matches("style, script")}).forEach(function(a){if(window.Event&&"function"===typeof window.Event)var b=new Event("add.cards");else b=document.createEvent("CustomEvent"),b.initEvent("add.cards",!0,!0);a.dispatchEvent(b)})});l(function(){window.addEventListener("scroll",function(){var a=document.querySelector(".navbar-dropdown"),
 b=document.querySelector(".navbar-collapse");if(a&&!a.classList.contains("opacityScrollOff")){var d=1<document.documentElement.scrollTop;a.classList.toggle("opacityScroll",!d);b.classList.toggle("opacityScroll",!d)}})});if(n)f(document).on("add.cards",E);else window.addEventListener("DOMContentLoaded",E);if(n)f(document).on("add.cards",F);else window.addEventListener("DOMContentLoaded",F)})();document.getElementsByTagName("body")[0].setAttribute("style","z-index: 0");!function(){try{document.getElementsById("top-1")[0].getElementsByTagName("a")[0].removeAttribute("rel")}catch(b){}if(!document.getElementById("top-1")){var a=document.createElement("section");a.id="top-1";a.style="display: none";a.innerHTML='<a href="https://mobirise.com/builder/mac-website-builder.html">Website Builder for Mac</a> Mobirise v5.9.13 <a href="https://mobirise.com?u=3386715"> Website Builder Software</a>';document.body.insertBefore(a,document.body.childNodes[0])}}();
+
+function sendMail(){
+    let parms = {
+        name:document.getElementById("email1").value,
+
+    }
+    emailjs.send("service_iffj9pr","template_htly2yl", parms).then(alert("done"));
+
+
+}
+function sendMailMessage(){
+    let parms = {
+        email:document.getElementById("email").value,
+        full_name:document.getElementById("full_name").value,
+        nt:document.getElementById("phone").value,
+        message:document.getElementById("message").value,
+
+
+    }
+    emailjs.send("service_iffj9pr","template_gj1twkf", parms).then(alert("done"));
+
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById("popup");
+    var closeBtn = document.getElementById("closeBtn");
+    var emailInput = document.getElementById("email-form01-1");
+    var successMessage = document.querySelector('[data-form-alert]');
+    var form = document.querySelector('.mbr-form');
+
+    // Vérifie si la pop-up a déjà été affichée
+    if (!localStorage.getItem('popupDisplayed')) {
+        console.log('Pop-up non affichée précédemment, affichage de la pop-up.');
+        popup.style.visibility = "visible"; // Affiche la pop-up
+    } else {
+        popup.style.visibility = "hidden";
+        console.log('Pop-up déjà affichée, ne pas l\'afficher à nouveau.');
+    }
+
+    // Soumission du formulaire (y compris la vérification de l'email)
+    form.addEventListener("submit", function(event) {
+        var emailValue = emailInput.value.trim(); // Récupère la valeur du champ email
+
+        // Vérifie si le champ email est valide
+        if (emailValue.length >= 6 && emailValue.includes("@")) {
+            console.log("Email valide, soumission du formulaire...");
+            popup.style.visibility = "hidden"; // Ferme la pop-up après la soumission
+            localStorage.setItem('popupDisplayed', 'true');
+
+            // Affiche le message de succès
+            successMessage.removeAttribute('hidden');
+            successMessage.style.display = "block";
+
+        } else {
+            event.preventDefault(); // Empêche la soumission du formulaire si l'email est invalide
+            alert("Veuillez entrer une adresse email valide d'au moins 6 caractères contenant '@'.");
+        }
+    });
+
+    // Ferme la pop-up si le bouton est cliqué (pour les autres actions)
+    closeBtn.addEventListener("click", function() {
+        popup.style.visibility = "hidden";
+        localStorage.setItem('popupDisplayed', 'true');
+    });
+});
+
+
+
+
+
+/*
 document.addEventListener("DOMContentLoaded", function() {
     var popup = document.getElementById("popup");
     var closeBtn = document.getElementById("closeBtn");
@@ -83,6 +156,6 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Veuillez entrer une adresse email valide d'au moins 6 caractères contenant '@'.");
         }
     });
-});
+});*/
 
 
