@@ -88,6 +88,33 @@ function sendMailMessage(){
 
 
 }
+function verifyEmail(event) {
+    // Empêche l'envoi par défaut
+    event.preventDefault();
+
+    // Récupère la valeur de l'email
+    var emailInput = document.getElementById("email1");
+    var emailValue = emailInput.value.trim();
+
+    // Vérifie si le champ email est valide
+    if (emailValue.length >= 6 && emailValue.includes("@")) {
+        console.log("Email valide, soumission du formulaire...");
+        document.getElementById("popup").style.visibility = "hidden"; // Ferme la pop-up
+        localStorage.setItem('popupDisplayed', 'true');
+        sendMail();
+
+        // Affiche le message de succès
+        var successMessage = document.querySelector('[data-form-alert]');
+        if (successMessage) {
+            successMessage.removeAttribute('hidden');
+            successMessage.style.display = "block";
+        }
+
+    } else {
+        alert("Veuillez entrer une adresse email valide  ");
+    }
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -97,24 +124,25 @@ document.addEventListener("DOMContentLoaded", function() {
     var successMessage = document.querySelector('[data-form-alert]');
     var form = document.querySelector('.mbr-form');
 
-    // Vérifie si la pop-up a déjà été affichée
+    /* Vérifie si la pop-up a déjà été affichée
     if (!localStorage.getItem('popupDisplayed')) {
         console.log('Pop-up non affichée précédemment, affichage de la pop-up.');
         popup.style.visibility = "visible"; // Affiche la pop-up
     } else {
         popup.style.visibility = "hidden";
         console.log('Pop-up déjà affichée, ne pas l\'afficher à nouveau.');
-    }
+    }*/
 
     // Soumission du formulaire (y compris la vérification de l'email)
     form.addEventListener("submit", function(event) {
-        var emailValue = emailInput.value.trim(); // Récupère la valeur du champ email
+        /*var emailValue = emailInput.value.trim(); // Récupère la valeur du champ email
 
         // Vérifie si le champ email est valide
         if (emailValue.length >= 6 && emailValue.includes("@")) {
             console.log("Email valide, soumission du formulaire...");
             popup.style.visibility = "hidden"; // Ferme la pop-up après la soumission
             localStorage.setItem('popupDisplayed', 'true');
+            sendMail();
 
             // Affiche le message de succès
             successMessage.removeAttribute('hidden');
@@ -123,8 +151,10 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             event.preventDefault(); // Empêche la soumission du formulaire si l'email est invalide
             alert("Veuillez entrer une adresse email valide d'au moins 6 caractères contenant '@'.");
-        }
+        }*/
     });
+
+
 
     // Ferme la pop-up si le bouton est cliqué (pour les autres actions)
     closeBtn.addEventListener("click", function() {
